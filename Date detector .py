@@ -31,7 +31,7 @@ def program():
     # getting no of leap year
     no_of_leap_year = no_of_year // 4
     # assigning value to particular day
-    day = ['Saturday', 'Sunday', 'Monday', 'Tuesday',
+    days = ['Saturday', 'Sunday', 'Monday', 'Tuesday',
            'Wednesday', 'Thursday', 'Friday', ]
     # calling function to assign a month code to variable x according to the month
     x = int(leapyear(year)[month])
@@ -45,23 +45,23 @@ def program():
         # getting remainder to check date
         final_result = result % 7
         # assigning value to day
-        Day = print(f'Day on {date}/{month}/{year} is {day[final_result]}')
+        Day = f'Day on {date}/{month}/{year} is {days[final_result]}\n'
     elif year in range(100, 200) or year in range(500, 600) or year in range(900, 1000) or year in range(1300, 1400) or year in range(1700, 1800) or year in range(2100, 2200) or year in range(2500, 2600) or year in range(2900, 3000):
         year_code = 4
         result = date + x + no_of_year + no_of_leap_year + year_code
         final_result = result % 7
-        Day = print(f'Day on {date}/{month}/{year} is {day[final_result]}')
+        Day = f'Day on {date}/{month}/{year} is {days[final_result]}\n'
     elif year in range(200, 300) or year in range(600, 700) or year in range(1000, 1100) or year in range(1400, 1500) or year in range(1800, 1900) or year in range(2200, 2300) or year in range(2600, 2700) or year in range(3000, 3100):
         year_code = 2
         result = date + x + no_of_year + no_of_leap_year + year_code
         final_result = result % 7
-        Day = print(f'Day on {date}/{month}/{year} is {day[final_result]}')
+        Day = f'Day on {date}/{month}/{year} is {days[final_result]}\n'
     elif year in range(300, 400) or year in range(700, 800) or year in range(1100, 1200) or year in range(1500, 1600) or year in range(1900, 2000) or year in range(2300, 2400) or year in range(2700, 2800) or year in range(3100, 3200):
         year_code = 0
         result = date + x + no_of_year + no_of_leap_year + year_code
         final_result = result % 7
-        Day = print(f'Day on {date}/{month}/{year} is {day[final_result]}')
-
+        Day = f'Day on {date}/{month}/{year} is {days[final_result]}\n'
+    return Day
 # ------------------------------------------------------------START-------------------------------------------------
 
 
@@ -72,7 +72,7 @@ while True:
         start=True
         break
     else:
-        print("wrong input..")
+        print("wrong input..\n")
 
         
 while start==True:
@@ -91,27 +91,27 @@ while start==True:
 
             # Checking wether user had entered correct month
             if month not in months:
-                print("Please input correct month")
+                print("Please input correct month\n")
 
             # Checking weather user had entered correct date
             elif (month in months_having_30days and date >= 31 or date == 0) or (month in months_having_31days and date >= 32 or date == 0) or (month == 2 and date >= 30 or date == 0):
-                print('Please enter correct date')
+                print('Please enter correct date\n')
 
             # If user had entered every thing correct then else part will be executed
             else:
-                program()
+                print(program())
         # If not a leap year
         else:
         # Checking wether user had entered correct month
             if month not in months:
-                print("Please input correct month")
+                print("Please input correct month\n")
 
         # Checking weather user had entered correct date
             elif (month in months_having_30days and date >= 31 or date == 0) or (month in months_having_31days and date >= 32 or date == 0) or (month == 2 and date >= 29 or date == 0):
-                print('Please enter correct date')
+                print('Please enter correct date\n')
 
         # If user had entered every thing correct then else part will be executed
             else:
-                program()
+                print(program())
     else:
         start=False
